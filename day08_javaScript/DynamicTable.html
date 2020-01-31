@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border:1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,th{
+            text-align: center;
+            border:1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+        input{
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text" id = "id" placeholder="id">
+        <input type="text" id = "name" placeholder="name">
+        <input type="text" id = "gender" placeholder="gender">
+        <input type="button" value="add" id = "btnAdd">
+    </div>
+
+        <table>
+            <caption>Student Information</caption>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>gender</td>
+                <td>Info</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>qyh</td>
+                <td>m</td>
+                <td><a href="javascript:void(0)" onclick="delTr(this);">delete</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>xjy</td>
+                <td>f</td>
+                <td><a href="javascript:void(0)" onclick="delTr(this);">delete</a></td>
+            </tr>
+        </table>
+
+    <script>
+
+        // add
+        // var btnAdd = document.getElementById("btnAdd");
+        // btnAdd.onclick = function () {
+        //     var id = document.getElementById("id").value;
+        //     var name = document.getElementById("name").value;
+        //     var gender = document.getElementById("gender").value;
+        //
+        //     var td_id = document.createElement("td");
+        //     td_id.appendChild(document.createTextNode(id));
+        //     var td_name = document.createElement("td");
+        //     td_name.appendChild(document.createTextNode(name));
+        //     var td_gender = document.createElement("td");
+        //     td_gender.appendChild(document.createTextNode(gender));
+        //     var ele_a = document.createElement("a");
+        //     var td_a = document.createElement("td");
+        //     ele_a.setAttribute("href","javascript:void(0)");
+        //     ele_a.setAttribute("onclick","delTr(this);");
+        //     ele_a.appendChild(document.createTextNode("delete"));
+        //     td_a.appendChild(ele_a);
+        //
+        //     var tr = document.createElement("tr");
+        //     tr.appendChild(td_id);
+        //     tr.appendChild(td_name);
+        //     tr.appendChild(td_gender);
+        //     tr.appendChild(td_a);
+        //
+        //     var table = document.getElementsByTagName("table")[0];
+        //     table.appendChild(tr);
+        // }
+
+        var btnAdd = document.getElementById("btnAdd");
+        btnAdd.onclick = function () {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var gender = document.getElementById("gender").value;
+
+
+            var table = document.getElementsByTagName("table")[0];
+            table.innerHTML += "<tr>\n" +
+                "                <td>" + id + "</td>\n" +
+                "                <td>" + name + "</td>\n" +
+                "                <td>" + gender + "</td>\n" +
+                "                <td><a href=\"javascript:void(0)\" onclick=\"delTr(this);\">delete</a></td>\n" +
+                "            </tr>"
+        }
+
+        // del
+        function delTr(obj) {
+            var table = obj.parentNode.parentNode.parentNode;
+            var tr = obj.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="reload" id = "reloadBtn">
+    <input type="button" value="Google" id = "goGoogleBtn">
+    <script>
+        var btn = document.getElementById("reloadBtn");
+        btn.onclick = function() {
+            location.reload();
+        }
+
+        var btn = document.getElementById("goGoogleBtn");
+        btn.onclick = function() {
+            location.href ="http://www.google.com";
+        }
+    </script>
+</body>
+</html>

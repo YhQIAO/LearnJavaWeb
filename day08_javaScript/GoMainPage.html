@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>go to main page</title>
+    <style>
+        p{
+            text-align: center;
+        }
+
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span id = "time">5</span>秒之后跳转首页
+    </p>
+
+    <script>
+        var second = 5;
+
+        function changeTime() {
+            second --;
+            if(second == 0) {
+                location.href = "https://www.google.com";
+            }
+            var span = document.getElementById("time");
+            span.innerHTML = second+"";
+        }
+
+        setInterval(changeTime,1000);
+    </script>
+</body>
+</html>
