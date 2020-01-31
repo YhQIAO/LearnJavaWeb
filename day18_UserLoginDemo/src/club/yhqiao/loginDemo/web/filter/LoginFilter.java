@@ -26,7 +26,7 @@ public class LoginFilter implements Filter {
 //            Object admin = request.getSession().getAttribute("admin");
 //            if(admin != null) {
 //                chain.doFilter(req,resp);
-//            } else {
+//            } else { //
 //                request.setAttribute("login_msg","please login first");
 //                request.getRequestDispatcher("/login.jsp").forward(request,resp);
 //            }
